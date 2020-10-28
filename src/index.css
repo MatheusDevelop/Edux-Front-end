@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.font-lg{
+  font-size: 81px;
+}
+.font-md{
+  font-size: 36px;
+}
+.font-md-sm{
+  font-size: 24px;
+}
+.font-sm{
+  font-size: 16px;
+}
+.button{
+  height:45px;
+  width:168px;
+  cursor: pointer;
+  
+}
+.roxo{
+  background-color:#7d53de;
+}
+.text-roxo{
+  color: #7d53de;
+}
+.azul{
+  background-color: #78E3FD;
+}
+.text-azul{
+  color:#78E3FD;
+}
