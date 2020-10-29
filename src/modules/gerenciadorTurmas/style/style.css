@@ -1,0 +1,25 @@
+.box__gerenciador__form{
+    min-width: 456px;
+    height: 100%;
+    max-height: 600px;
+    padding:10px;
+    font-size: 18px;
+    
+}
+.box__gerenciador__form input,.box__gerenciador__form textarea{
+    border: 0px;
+    width: 80%;
+}
+.box__gerenciador__form textarea{
+    height: 186px;
+}
+
+.card__turma{
+    min-width:318px;
+    min-height:318px;    
+}
+
+.read__scroll{    
+    height:456px;
+    overflow-y: scroll;
+}

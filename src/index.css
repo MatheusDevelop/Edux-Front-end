@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#7d53de!important;
+
 }
 
 code {
@@ -24,6 +26,7 @@ code {
 .font-sm{
   font-size: 16px;
 }
+
 .button{
   height:45px;
   width:168px;

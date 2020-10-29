@@ -1,6 +1,4 @@
 import {Container, Row,Col} from "react-bootstrap";
-import Header from "../components/header";
-import WelcomeImg from '../../../assets/Grupo 2.jpg'
 import '../style/style.css'
 function loginPage() {
 
@@ -20,7 +18,7 @@ function loginPage() {
                     </Col>
                     <Col className="box__right roxo">
                         <div className="box__right__form--tittle font-md font-weight-bold text-white mb-2">
-                              Sign up  
+                              Log in  
                         </div>
                         <div className="box__right__form shadow-lg font-md-sm ">
                             <div>
