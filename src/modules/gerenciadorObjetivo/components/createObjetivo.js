@@ -1,8 +1,8 @@
-function CreateTurma(props) {
+function CreateObjetivo(props) {
 
     
     const Update = ()=>{
-        let url="https://localhost:44356/api/turma"
+        let url="http://localhost:3001/api/objetivo"
         fetch(url)
         .then(res=>res.json()) 
         .then((json)=>{
@@ -18,12 +18,12 @@ function CreateTurma(props) {
             
           });
         let obj = {
-            idObjetivo:'160F248B-06D9-469A-8CFB-7E87DABF59FF',
+            idCurso:'160F248A-06D6-469A-8CFB-7E33DABF59BF',
             descricao:description
         }
         document.getElementById("description").value="";
 
-        let url="https://localhost:44356/api/turma"
+        let url="http://localhost:3001/api/objetivo"
         fetch(url,{
             method:'post'
             ,headers:myHeaders
@@ -31,11 +31,11 @@ function CreateTurma(props) {
         })
         .then(()=>{
                 Update()
-                alert("Turma adicionada");
+                alert("Objetivo adicionado");
             }
         )
         .catch(()=>{
-            alert("Erro ao adicionar turma")
+            alert("Erro ao adicionar objetivo")
         })
    }    
 
@@ -48,16 +48,15 @@ function CreateTurma(props) {
     return (
         <div className="box__gerenciador__form bg-white shadow-lg font-sm pl-5 mb-5 ">
             <div className="font-md font-weight-bold text-roxo mb-3">
-                Adicionar nova<br />turma
+                Adicionar novo<br />objetivo
                             </div>
-            <div>
+             <div className="mt-5">
                 <div>
-                    <label>Cursos</label>
+                    <label>Nome do objetivo</label>
                 </div>
-                <div>
-                    Colocar check de cursos
-                </div>
+                <textarea className="shadow" id="description">
 
+                </textarea>
             </div>
             <div className="mt-5">
                 <div>
@@ -75,9 +74,10 @@ function CreateTurma(props) {
                     </div>
                 </div>
             </div>
+            
         </div>
 
     )
 }
 
-export default CreateTurma;
+export default CreateObjetivo;
