@@ -7,8 +7,35 @@ import '../style/style.css'
 
 function GerenciadorObjetivoPage() {
 
-    
-    
+    const [objetivo, setObjetivo] = useState(
+        [
+        ]
+    );
+
+    useEffect(() => {
+       
+        let url = "https://localhost:44356/api/objetivo"
+        fetch(url)
+            .then((res)=>{
+                return res.json()
+            })
+            .then((json)=>{
+                setObjetivo(json);
+            })
+       
+
+    }, []);
+
+    let variavelQualquer= objetivo.map((objeto)=>{
+
+        return(
+            <div className="card__objetivo bg-white mx-2">                
+                {objeto.tipo}
+            </div>
+        )
+        
+
+    })
 
     return (
         <>
@@ -26,7 +53,7 @@ function GerenciadorObjetivoPage() {
                     </Col>
                     <Col lg={7} className="d-flex align-items-center">
                         <Row className="flex-wrap read__scroll">
-
+                            {variavelQualquer}
                         </Row>
                     </Col>
                 </Row>
