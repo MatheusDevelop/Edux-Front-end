@@ -34,7 +34,10 @@ code {
   
 }
 .roxo{
-  background-color:#7d53de;
+  background-color: #7d53de;
+}
+.roxo-gradient{
+  background:linear-gradient(180deg,#a884fa,#7d53de)
 }
 .text-roxo{
   color: #7d53de;
@@ -44,4 +47,14 @@ code {
 }
 .text-azul{
   color:#78E3FD;
+}
+::-webkit-scrollbar-track {
+    border-radius: 25px;
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(245, 245, 245, 0.795);
+    border-radius: 25px;
 }
