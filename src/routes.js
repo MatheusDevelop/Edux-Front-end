@@ -2,6 +2,7 @@ import { BrowserRouter,Switch,Route } from "react-router-dom";
 import CadastrarPage from "./modules/cadastro/pages/cadastrarPage";
 import GerenciadorTurmasPage from "./modules/gerenciadorTurmas/pages/gerenciadorTurmasPage";
 import loginPage from "./modules/login/pages/loginPage";
+import GerenciadorObjetivoPage from "./modules/gerenciadorObjetivo/pages/gerenciadorObjetivoPage";
 
 function Routes() {
     return(
@@ -9,7 +10,7 @@ function Routes() {
             <Switch>
                 <Route path="/login" component={loginPage}/>
                 <Route path="/gerenciadordeturmas" component={GerenciadorTurmasPage}/>
-                <Route path="/cadastrar" component={CadastrarPage}/>
+                <Route path="/gerenciadordeobjetivo" component={GerenciadorObjetivoPage}/>
             </Switch>
         </BrowserRouter>
     )
