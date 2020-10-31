@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../../template/footer/footer';
 import Header from '../components/header';
 
 const GerenciadorDicasPage = () => {
@@ -6,7 +7,7 @@ const GerenciadorDicasPage = () => {
     return(
         <div>
             <Header />
-
+            <Footer />
         </div>
 
     )
