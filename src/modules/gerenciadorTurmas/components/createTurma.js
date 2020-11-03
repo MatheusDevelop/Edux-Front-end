@@ -74,18 +74,18 @@ function CreateTurma(props) {
                 Adicionar nova<br />turma
                             </div>
             <div>
-                <div  className="font-weight-bold text-dark">
-                    Cursos
-                </div>
-                <Dropdown>
-                    <Dropdown.Toggle variant="transparent" className="roxo" id="dropdown-basic"> 
-                        {select>=0 ? curso[select].titulo : 'Selecione um curso'}                      
-                    </Dropdown.Toggle>
+            <div  className="font-weight-bold text-dark">
+                Cursos
+            </div>
+            <Dropdown>
+                <Dropdown.Toggle variant="transparent" className="roxo" id="dropdown-basic"> 
+                    {select>=0 ? curso[select].titulo : 'Selecione um curso'}                      
+                </Dropdown.Toggle>
 
-                    <Dropdown.Menu>
-                        {list}
-                    </Dropdown.Menu>
-                </Dropdown>
+                <Dropdown.Menu>
+                    {list}
+                </Dropdown.Menu>
+            </Dropdown>
             </div>
             <div className="mt-5">
                 <div className="font-weight-bold text-dark">

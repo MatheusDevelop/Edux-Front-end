@@ -3,6 +3,7 @@ import { Container, Row, Col,Toast } from "react-bootstrap";
 import '../style/style.css'
 import { Link } from 'react-router-dom'
 import LeftSide from "../components/leftSide";
+import LogoEdux from '../../../assets/Ativo 1.svg'
 function LoginPage() {
 
     const [toast,setToast] = useState(false);
@@ -43,6 +44,7 @@ function LoginPage() {
                 console.log(json())
             })
             .catch(() => {
+                setToast(true)
             })
 
 
@@ -63,6 +65,9 @@ function LoginPage() {
                 <Row>
                     <LeftSide/>
                     <Col className="box__right roxo-gradient fadeIn">
+                        <div>
+                            <img src={LogoEdux}/>
+                        </div>
                         <div className="box__right__form--tittle font-md font-weight-bold text-white mb-2">
                             Log in
                         </div>

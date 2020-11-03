@@ -37,7 +37,6 @@ function CadastrarPage() {
             senha: pass
         }
 
-        console.log(obj)
         fetch(url, {
             method: 'post'
             , headers: myHeaders

@@ -21,7 +21,6 @@ function GerenciadorTurmasPage() {
     },[]);
 
     let list = turma.map((item)=>{ 
-        
         return(
             <Card descript={item.descricao} setter={setTurma} remove={item.idTurma} curso={item.idCursoNavigation.titulo}/>
         )
