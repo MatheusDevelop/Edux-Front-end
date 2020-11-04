@@ -2,9 +2,10 @@ import { BrowserRouter,Switch,Route } from "react-router-dom";
 import CadastrarPage from "./modules/cadastro/pages/cadastrarPage";
 import GerenciadorTurmasPage from "./modules/gerenciadorTurmas/pages/gerenciadorTurmasPage";
 import loginPage from "./modules/login/pages/loginPage";
-import GerenciadorDicasPage from "./modules/gerenciadorDicas/pages/gerenciadorDicasPage"
+
 import GerenciadorObjetivoPage from "./modules/gerenciadorObjetivo/pages/gerenciadorObjetivoPage";
 import GerenciadorCategoriasPage from "./modules/gerenciadorCategoria/pages/gerenciadorCategoria";
+import GerenciadorDicasPage from "./modules/gerenciadorDicas/pages/gerenciadorCategoria";
 
 function Routes() {
     return(
@@ -14,7 +15,7 @@ function Routes() {
                 <Route path="/login" component={loginPage}/>
                 <Route path="/cadastrar" component={CadastrarPage}/>
                 <Route path="/gerenciadordeturmas" component={GerenciadorTurmasPage}/>
-                <Route path="/gerenciadordedicas" component={GerenciadorDicasPage}/>
+                <Route path="/gerenciadordedicas" component={GerenciadorCategoriasPage} />
 
                 <Route path="/gerenciadordeobjetivo" component={GerenciadorObjetivoPage}/>
 
