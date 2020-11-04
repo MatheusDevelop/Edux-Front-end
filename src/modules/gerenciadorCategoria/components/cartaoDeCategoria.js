@@ -1,6 +1,6 @@
 function CartaoDeCategoria(props) {
     
-    const removerObjeto = (id)=>{
+    const removerObjeto = (id) => {
 
         let url = `https://localhost:44356/api/categoria/${id}`
 
@@ -14,6 +14,7 @@ function CartaoDeCategoria(props) {
             })
 
     }
+    
 
     return (
         <div className="card__turma bg-white shadow m-2 p-5 text-dark fadeIn">

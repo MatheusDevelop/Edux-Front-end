@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import CartaoDeCategoria from "../components/cartaoDeCategoria";
-import CriacaoDeCategoria from "../components/criacaoDeCategoria";
+import CartaoDeDica from "../components/cartaoDeDica";
+import CartaoDeCategoria from "../components/cartaoDeDica";
+import CriacaoDeDica from "../components/criacaoDeDica";
+import CriacaoDeCategoria from "../components/criacaoDeDica";
 
 const { default: Header } = require("../../gerenciadorObjetivo/components/header");
 
-function GerenciadorCategoriasPage() {
+function GerenciadorDicasPage() {
 
-    const [categoria, setCategoria] = useState([]);
+    const [dica, setDica] = useState([]);
 
     useEffect(()=>{
-        let url ="https://localhost:44356/api/categoria"
+        let url ="https://localhost:44356/api/dica"
 
         fetch(url)
             .then((res)=>{
@@ -21,15 +23,16 @@ function GerenciadorCategoriasPage() {
                 }
             })
             .then((json)=>{
-                setCategoria(json)
+                setDica(json)
             })
             
 
     }, []);
 
-    let list = categoria.map((objeto)=>{
+    let list = dica.map((objeto)=>{
         return(
-            <CartaoDeCategoria tituloDinamico={objeto.tipo} id={objeto.idCategoria}/>
+            <CartaoDeDica tituloDinamico={objeto.tipo} id={objeto.idDica} setter={setDica}/>
+            
         )
     })
 
@@ -45,7 +48,7 @@ function GerenciadorCategoriasPage() {
                 </Row>
                 <Row>
                     <Col>
-                        <CriacaoDeCategoria />
+                        <CriacaoDeDica setter={setDica}/>
                     </Col>
                     <Col lg={7} className="d-flex align-items-center">
                         <Row className="flex-wrap read__scroll">
@@ -59,4 +62,4 @@ function GerenciadorCategoriasPage() {
 
 }
 
-export default GerenciadorCategoriasPage;
+export default GerenciadorDicasPage;
