@@ -48,6 +48,15 @@ code {
 .text-azul{
   color:#78E3FD;
 }
+.margin_home {
+  margin-top: 100px !important;
+  margin-left: 100px !important;
+}
+.margin_home_2 {
+  margin-top: 10px !important;
+  margin-bottom: 30px !important;
+}
+
 ::-webkit-scrollbar-track {
     border-radius: 25px;
 }

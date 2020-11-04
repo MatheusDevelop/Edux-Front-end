@@ -6,6 +6,8 @@ import loginPage from "./modules/login/pages/loginPage";
 import GerenciadorObjetivoPage from "./modules/gerenciadorObjetivo/pages/gerenciadorObjetivoPage";
 import GerenciadorCategoriasPage from "./modules/gerenciadorCategoria/pages/gerenciadorCategoria";
 import GerenciadorDicasPage from "./modules/gerenciadorDicas/pages/gerenciadorDica";
+import HomeAluno from "./modules/home/home_aluno";
+import HomeProfessor from "./modules/home/home_professor";
 
 function Routes() {
     return(
@@ -20,6 +22,10 @@ function Routes() {
                 <Route path="/gerenciadordeobjetivo" component={GerenciadorObjetivoPage}/>
 
                 <Route path="/gerenciadordecategoria" component={GerenciadorCategoriasPage} />
+                <Route path="/homealuno" component={HomeAluno} />
+                <Route path="/homeprofessor" component={HomeProfessor} />
+
+
             </Switch>
         </BrowserRouter>
     )

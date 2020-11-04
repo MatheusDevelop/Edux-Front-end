@@ -9,25 +9,6 @@ function CriacaoDeDica(props) {
             })
     }
 
-    const uploadFile = (event) => {
-        event.preventDefault()
-
-        console.log(event);
-        //crio o formulário para envio do arquivo
-        let formdata = new FormData();
-        formdata.append('arquivo', event.target.files[0]);
-        
-        fetch(`${url}/upload`,
-        {
-            method : 'POST',
-            body : formdata 
-        })
-        .then(response => response.json())
-        .then(data =>{
-            setUrlImagem(data.url);
-        })
-        .catch(err => console.error(err))
-    }
     
     const adicionarDica = ()=>{
         let url ="https://localhost:44356/api/dica"
