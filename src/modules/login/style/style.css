@@ -23,7 +23,8 @@
 }
 .box__right__form{
     width: 453px;
-    height: 453px;
+    min-height: 453px;
+    margin-bottom: 10px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -38,3 +39,21 @@
     border: 0px;  
     width: 100%;  
 }
+
+
+.fadeIn{
+    animation: fade 1s ease-in;
+}
+
+.text__welcome__box{
+    width: 80%;
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+  }

@@ -21,16 +21,15 @@ function GerenciadorTurmasPage() {
     },[]);
 
     let list = turma.map((item)=>{ 
-        console.log(turma)       
         return(
-            <Card descript={item.descricao} curso={item.idCursoNavigation.titulo}/>
+            <Card descript={item.descricao} setter={setTurma} remove={item.idTurma} curso={item.idCursoNavigation.titulo}/>
         )
     })
 
     return (
         <>
             <Header />
-            <Container fluid className="px-5 box__gerenciador">
+            <Container fluid className="px-5 box__gerenciador fadeIn">
                 <Row>
                     <div className="font-lg font-weight-bold text-white">
                         Gerenciador<br />de
@@ -39,12 +38,10 @@ function GerenciadorTurmasPage() {
                 </Row>
                 <Row>
                     <Col>
-                        <CreateTurma setter ={setTurma}/>
+                        <CreateTurma json={turma} setter ={setTurma}/>
                     </Col>
-                    <Col lg={7} className="d-flex align-items-center">
-                        <Row className="flex-wrap read__scroll">
-                            {list}
-                        </Row>
+                    <Col lg={7} className="d-flex align-items-center read_scroll justify-content-center">
+                        {list}
                     </Col>
                 </Row>
             </Container>
