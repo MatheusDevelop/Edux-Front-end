@@ -45,7 +45,6 @@ function CreateTurma(props) {
         })
             .then(() => {
                 Update()
-                alert("Turma adicionada");
             }
             )
             .catch(() => {
@@ -98,12 +97,12 @@ function CreateTurma(props) {
 
             <div className="mt-5 d-flex justify-content-start">
                 <div onClick={handleCreate} className="button azul text-white d-flex justify-content-between px-3 align-items-center font-weight-bold shadow px-2">
-                        <div>
+                    <div>
                         Salvar
-                        </div>
-                        <div className="d-flex align-items-center">
-                            <div class="material-icons">check_circle</div>
-                        </div>
+                    </div>
+                    <div className="d-flex align-items-center">
+                        <div class="material-icons">check_circle</div>
+                    </div>
                 </div>
             </div>
         </div>

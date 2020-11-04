@@ -8,9 +8,8 @@ function CreateObjetivo() {
                 <div>
                     <label>Nome do objetivo</label>
                 </div>
-                <input className="shadow" id="description">
+                <input className="shadow" id="description" />
 
-                </input>
             </div>
             <div className="mt-5">
                 Categoria

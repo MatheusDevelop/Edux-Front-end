@@ -1,21 +1,10 @@
 function Card(props) {
-    const Update = () => {
-        let url = "https://localhost:44356/api/turma"
-        fetch(url)
-            .then(res => res.json())
-            .then((json) => {
-                props.setter(json);
-            })
-    }
-
     const remove = (id)=>{
         let myHeaders = new Headers({
             'Content-Type': 'application/json',
 
         });
-        console.log(id);
-        
-        let url = `https://localhost:44356/api/turma/${id}`
+        let url = `https://localhost:44356/api/curso/${id}`
         fetch(url,{method:'delete'})
         .then(() => {
             Update()
@@ -25,19 +14,23 @@ function Card(props) {
         .catch(() => {
             alert("Erro ao remover turma")
         })
-        
     }
-
+    const Update = () => {
+        let url = "https://localhost:44356/api/curso"
+        fetch(url)
+            .then(res => res.json())
+            .then((json) => {
+                props.setter(json);
+            })
+    }
     return(
-        <div className="card__turma bg-white shadow m-2 p-5 text-dark fadeIn">
-            <div className="font-md font-weight-bold">
-                {props.turma}
-            </div>
+         <div className="card__turma bg-white shadow m-2 p-5 text-dark fadeIn">
+            
             <div className="font-md-sm">
-                {props.curso}
+                {props.title}
             </div>
             <div className="font-sm  text__box__descript">
-                {props.descript}
+                {props.subtitle}
             </div>
             <div className="d-flex mt-5">
                 <div onClick={()=>{remove(props.remove)}}className="button bg-danger mr-2 font-weight-bold d-flex justify-content-around text-white align-items-center">
@@ -63,6 +56,7 @@ function Card(props) {
                 
             </div>
         </div>
+    
     )
 }
 
