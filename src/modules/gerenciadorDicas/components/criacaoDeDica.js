@@ -1,13 +1,42 @@
-function CriacaoDeCategoria() {
+function CriacaoDeDica(props) {
 
-    const adicionarCategoria = ()=>{
-        let url ="https://localhost:44356/api/categoria"
+    const Update = () => {
+        let url = "https://localhost:44356/api/dica"
+        fetch(url)
+            .then(res => res.json())
+            .then((json) => {
+                props.setter(json);
+            })
+    }
+
+    const uploadFile = (event) => {
+        event.preventDefault()
+
+        console.log(event);
+        //crio o formulário para envio do arquivo
+        let formdata = new FormData();
+        formdata.append('arquivo', event.target.files[0]);
+        
+        fetch(`${url}/upload`,
+        {
+            method : 'POST',
+            body : formdata 
+        })
+        .then(response => response.json())
+        .then(data =>{
+            setUrlImagem(data.url);
+        })
+        .catch(err => console.error(err))
+    }
+    
+    const adicionarDica = ()=>{
+        let url ="https://localhost:44356/api/dica"
         let valorDoTextArea = document.getElementById("categoria_description").value;
 
         document.getElementById("categoria_description").value = ""
 
         let objetoEmJavascript = {
-            tipo:valorDoTextArea
+            texto:valorDoTextArea
         }
 
         let myHeaders = new Headers({
@@ -21,6 +50,7 @@ function CriacaoDeCategoria() {
         })
         .then((res)=>{
             if(res.status == 200){
+                Update()
                 alert("Deu tudo certo")
             }else{
                 alert("Deu merda")
@@ -46,7 +76,7 @@ function CriacaoDeCategoria() {
 
             </textarea>
             <div className="mt-5 d-flex justify-content-start">
-                <div onClick={adicionarCategoria} className="button azul text-white d-flex justify-content-between px-3 align-items-center font-weight-bold shadow px-2">
+                <div onClick={adicionarDica} className="button azul text-white d-flex justify-content-between px-3 align-items-center font-weight-bold shadow px-2">
                     <div>
                         Salvar
                                     </div>
@@ -59,4 +89,4 @@ function CriacaoDeCategoria() {
     )
 }
 
-export default CriacaoDeCategoria;
+export default CriacaoDeDica;

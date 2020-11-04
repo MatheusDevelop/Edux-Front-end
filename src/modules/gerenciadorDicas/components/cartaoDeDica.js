@@ -1,18 +1,35 @@
-function CartaoDeCategoria(props) {
+import CriacaoDeDica from "./criacaoDeDica"
+
+function CartaoDeDica(props) {
     
+    const editarObjeto = (id) => {
+        
+    }
+
     const removerObjeto = (id)=>{
 
-        let url = `https://localhost:44356/api/categoria/${id}`
+        let url = `https://localhost:44356/api/dica/${id}`
 
         fetch(url,{method:'DELETE'})
             .then((res)=>{
                 if(res.status == 200){
+                    Update()
                     alert("Item removido com sucesso")
                 }else{
                     alert("Deu merda")
                 }
-            })
-
+        })
+        
+        const Update = () => {
+            let url = "https://localhost:44356/api/dica"
+            fetch(url)
+                .then(res => res.json())
+                .then((json) => {
+                    props.setter(json);
+                })
+        }
+            
+        
     }
 
     return (
@@ -49,4 +66,4 @@ function CartaoDeCategoria(props) {
     )
 }
 
-export default CartaoDeCategoria;
+export default CartaoDeDica;
